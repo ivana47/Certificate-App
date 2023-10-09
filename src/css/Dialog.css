@@ -1,0 +1,58 @@
+.headerbox {
+    border: 1px solid #d6d6d6;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 1px;
+    height: 45px;
+}
+
+.container {
+    width: 100%;
+    max-width: 905px;
+    height: auto;
+}
+
+.buttonContainer {
+    margin-top: 10px;
+}
+
+.buttonContainerFirst {
+    margin-top: -55px;
+    margin-left: 20px;
+}
+
+.box1 {
+    margin-top: -8px;
+    margin-left: 1px;
+    margin-right: 5px;
+    border: 1px solid #d6d6d6;
+}
+
+.box2 {
+    position: flex;
+    margin-top: 2px;
+    margin-left: 1px;
+    margin-right: 5px;
+    border: 1px solid #d6d6d6;
+}
+
+.header_box1 {
+    border: 2px solid #3f9acf;
+    background-color: #3f9acf;
+    padding: 8px;
+    color: white;
+}
+
+p {
+    position: relative;
+    bottom: 5px;
+    left: 1px;
+}
+
+.header_box2 {
+    border: 2px solid #3f9acf;
+    background-color: #3f9acf;
+    padding: 8px;
+    color: white;
+}
