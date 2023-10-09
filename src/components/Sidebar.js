@@ -3,6 +3,10 @@ import React from "react";
 import styled from "styled-components";
 import { SideBarData } from "./SidebarData";
 import SubMenu from "./SubMenu";
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+
 
 const Container = styled.div`
   display: flex;
@@ -69,7 +73,8 @@ const LanguageList = styled.ul`
 
 const LanguageLabel = styled.span`
   font-size: 18px;
-  margin-left: 1720px;
+   margin-left: 10px;
+   position: flex;
 `;
 
 const LanguageItem = styled.li`
@@ -80,10 +85,24 @@ const LanguageItem = styled.li`
     background: #3f9acf;
   }
 `;
+const UserLabel = styled.label`
+  margin-left: 1560px; 
+  font-size: 18px;
+`;
+const userList = ["Haris", "Mahir", "Dina", "Ema"]; //list of users
 
 const SideBar = () => {
   const [selectedLanguage, setSelectedLanguage] = useState("English");
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
+  const [selectedUser, setSelectedUser] = useState('');  //inicial s
+
+  const handleUserChange = (event) => {
+    setSelectedUser(event.target.value);
+    const selectedUser = event.target.value;
+    setSelectedUser(selectedUser);
+
+    localStorage.setItem("selectedUser", selectedUser); //to save selected user on local storage
+  };
 
   return (
     <Container>
@@ -94,6 +113,26 @@ const SideBar = () => {
       </SideB>
       <Header>
         <Header_blue>DCCS Tuzla</Header_blue>
+
+        <UserLabel>
+          User:
+        </UserLabel>
+        <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+          <Select
+            value={selectedUser}
+            onChange={handleUserChange}
+            displayEmpty
+            inputProps={{ 'aria-label': 'Without label' }}
+          >
+            <MenuItem value="">
+            </MenuItem>
+            {userList.map((user) => (
+              <MenuItem key={user} value={user}>
+                {user}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
         <LanguageLabel>Language:</LanguageLabel>
         <LanguageDropdown>
           <LanguageButton
