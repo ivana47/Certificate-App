@@ -1,6 +1,6 @@
 **Certificate App - React Frontend Implementation**
 
-Welcome to the Certificate App project. In this endeavour, I had the privilege of working on the front end implementation for DCCS Tuzla, a challenging yet rewarding experience.
+Welcome to the Certificate App project. In this project, I had the privilege of working on the front end implementation for DCCS Tuzla, a challenging yet rewarding experience.
 
 The Certificate App exemplifies my commitment to learning and adapting to new technologies, as I tackled React for the first time.
 
