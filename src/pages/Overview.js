@@ -15,12 +15,20 @@ const Overview = ({ certificate }) => {
   const [selectedPersonInfo, setSelectedPersonInfo] = useState(null);
   const [selectedDepartment, setSelectedDepartment] = useState(null);
   const [selectedEmail, setSelectedEmail] = useState(null);
-  const [selectedPeopleInfo, setSelectedPeopleInfo] = useState([]);
   const [localSelectedPeopleInfo, setLocalSelectedPeopleInfo] = useState([]);
-
+  const [selectedPeopleInfo, setSelectedPeopleInfo] = useState(() => {
+    const savedSelectedPeopleInfo = localStorage.getItem("selectedPeopleInfo");
+    if (savedSelectedPeopleInfo) {
+      return JSON.parse(savedSelectedPeopleInfo);
+    }
+    return [];
+  });
+  
   useEffect(() => {
     setCertificates(getListCertificates());
   }, []);
+
+  
 
   //local storage people
   useEffect(() => {
@@ -41,6 +49,18 @@ const Overview = ({ certificate }) => {
       console.log("Data retrieved from localStorage:", parsedData);
     }
   }, []);
+
+  
+  const handleIconClickClose = (index) => {
+    const updatedSelectedPeopleInfo = [...selectedPeopleInfo];
+  
+    updatedSelectedPeopleInfo.splice(index, 1);
+  
+    setSelectedPeopleInfo(updatedSelectedPeopleInfo);
+  
+    localStorage.setItem("selectedPeopleInfo", JSON.stringify(updatedSelectedPeopleInfo));
+  };
+  
 
   // const certificates = [
   //   {
@@ -171,7 +191,6 @@ const Overview = ({ certificate }) => {
       <PersonsDialog
         open={isDialogOpen}
         handleClose={handleCloseDialog}
-        //  setSelectedPersonInfo={setSelectedPersonInfo}
         setSelectedPerson={setSelectedPersonInfo}
         setSelectedDepartment={setSelectedDepartment}
         setSelectedEmail={setSelectedEmail}
@@ -179,7 +198,7 @@ const Overview = ({ certificate }) => {
       // setForm={setForm}
       // inputValues={inputValues}
       />
-      {/* otvaram dialog od persons */}
+      {/* otvara se dialog od persons */}
 
       <table
         style={{
@@ -205,7 +224,7 @@ const Overview = ({ certificate }) => {
                 <span>
                   <CloseIcon
                     style={{ cursor: "pointer" }}
-                  // onClick={() => handleIconClick(index)}
+                  onClick={() => handleIconClickClose(index)}
                   />
                 </span>
               </td>
