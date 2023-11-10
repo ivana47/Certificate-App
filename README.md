@@ -1,6 +1,6 @@
 <h1>**Certificate App - React Frontend Implementation**</h1>
 
-Welcome to the Certificate App project. In this project, I had the privilege of working on the front-end implementation for DCCS Tuzla, internship project.
+Welcome to the Certificate App project.
 
 The Certificate App exemplifies my commitment to learning and adapting to new technologies, as I tackled React for the first time.
 
@@ -36,5 +36,5 @@ Overview:
 ![Screenshot from 2023-10-09 23-11-22](https://github.com/ivana47/Certificate-App/assets/89736924/3543d883-7da7-499d-a8c1-5d4df095b9c5)
 
 
-<h3> Thank you for taking the time to review my project. I hope it aligns with your requirements, and I look forward to the possibility of future interactions.</h3>
+<h3> Thank you for taking the time to review my project. </h3>
 
